@@ -107,3 +107,4 @@ venv.bak/
 # Models and their weights
 *.hdf5
 *.h5
+train_ship_segmentations.csv

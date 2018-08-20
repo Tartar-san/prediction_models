@@ -1,6 +1,7 @@
 dataset_paths = {
     "train": "train",
     "test": "test",
+    "train_masks": "train_masks",
     "submission_sample":  "sample_submission.csv",
     "train_ship_segmentations": "train_ship_segmentations.csv"
 }
@@ -14,3 +15,5 @@ server1_paths = {
 server2_paths = {
 
 }
+
+working_size = 128
