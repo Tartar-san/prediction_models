@@ -120,6 +120,7 @@ def Contour(file, param=150):
 
 
 # Equalizing and Stretching Image Contrast
+
 def Equalizer(file):
     '''
     Equalizes image spectrum (in gray scale)
@@ -128,3 +129,17 @@ def Equalizer(file):
     selem = disk(100)
     img_eq = rank.equalize(img, selem=selem)
     return img_eq
+
+
+def Contrast(file, channel = None):
+    '''
+    Creates high contrast image (in specified channel)
+    '''
+    img = io.imread(file, as_grey= False)
+    left, right = np.percentile(img, (30, 70))
+    if channel ==None:
+        img_rescale = exposure.rescale_intensity(img, in_range=(left, right))
+    else:
+        img_rescale = exposure.rescale_intensity(img[:,:,channel], in_range=(left, right))
+    return img_rescale
+
